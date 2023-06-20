@@ -1,0 +1,110 @@
+
+<!Doctype html>
+<html>
+<head>
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/fontawesome.
+min.css"
+/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+      body{
+            background-repeat: no-repeat;
+            background-size:cover;
+            background-image: url("{{url_for('static',filename='/images1.png')}}");
+            
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+      }
+      p{
+            text-align: center;
+            font-size: 40px;
+            font-weight: bold;
+      }
+      input[type=text]{
+            min-width: 350px;
+            padding: 21px 20px;
+            margin: 8px;
+            border-radius: 10px;
+            display: inline-block;
+            border: 1px solid black;
+            box-sizing: border-box;
+            font-size: 20px;
+            box-shadow: 0 5px 8px 3px black;
+            
+cursor: pointer;
+      }
+      .search{
+            position: relative;
+      }
+      .centered {
+            height: 18pmx;
+          }
+      button{
+            position: absolute;
+            background: red;
+            min-width: 50px;
+            height: 100%;
+            right: 3%;
+            border-radius: 50%;
+            cursor: pointer;
+            border: none;
+            background: none;
+            font-size: 18px;
+
+      }  
+      button i{
+            color: rgb(93, 94, 95);
+
+      }
+      button:hover i{
+            color: rgb(162, 163, 163);
+      }
+      dropdown {
+  position: absolute;
+  z-index: 1;
+  top: 100%;
+  left: 0;
+  right: 0;
+  max-height: 200px;
+  overflow-y: auto;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+</style>
+<script>
+
+</script>
+</head>
+<body>
+      
+     <div class="main">
+           <p>TECHNICAL HUB</p>
+           <center>
+            <div class="search">
+                  <form action='/res' method='POST'>
+                  
+                  <input type="text" name="val" placeholder="search...."   >
+                  
+                  
+                  <button type="submit" ><i style='font-size:24px' class='fa fa-search'></i>
+                  </button>
+                  <div class="dropdown" id="dropdown-menu"></div>
+            </form>
+            </div>
+            <p class="centered" style="font-size: 25px; padding-top:-200px">Powered By Machine Minds</p>
+           </center> 
+           <p style="font-size: 18px; padding-top:-200px">{{ que }}</p>
+           <p class="left" style="font-size: 20px; padding-top:-200px">next word suggestions:</p>
+           <p style="font-size: 18px; padding-top:-200px">{{data}}</p>    
+           
+      </div>
+</body>
+</html>
+
+  
